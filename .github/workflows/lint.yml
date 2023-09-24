@@ -4,13 +4,14 @@
 name: linter
 
 on:
+  workflow_dispatch:
   - pull_request_target
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-   workflow_dispatch
+  
 jobs:
   lint:
     runs-on: ubuntu-latest
